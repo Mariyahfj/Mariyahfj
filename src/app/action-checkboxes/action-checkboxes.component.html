@@ -1,0 +1,30 @@
+<div class="row" style="border-bottom: 2px solid black;border-top: 2px solid black;">
+    <table>
+        <tbody>
+            <tr class="row">                   
+                <td *ngFor="let item of checkBoxArray">
+                    <input type="checkbox" id="{{item.label}}" class="largerCheckbox" [(ngModel)]="item.isChecked" (change)="generateSeries(item, $event)"/>
+                    <label for="{{item.label}}" class="checkLabel text-color">{{item.label}}</label>                    
+                </td>                             
+                <td class="text-color"><span>{{gstNo}}</span></td>
+                <td><svg *ngFor="let item of letterArray" width="40" height="20">
+                    <rect width="30" height="20" title="{{item}}" data="{{item}}" style="fill:rgb(214, 48, 48);stroke-width:3;stroke:rgb(0,0,0);" />
+                    <text x="10" y="15" fill="black">{{item}}</text>
+                  </svg>
+                </td> 
+                <td><svg width="40" height="20">
+                    <rect width="32" height="20" style="fill:rgb(23, 70, 26);stroke-width:3;stroke:rgb(0,0,0)" />
+                    <text x="10" y="15" fill="black">LP</text>
+                  </svg>
+                </td>
+                <td  class="col-sm-2"><div style="border: 2px solid black;text-align: center;">
+                    <span>Multiple</span></div></td>      
+                <td>
+                    <input type="checkbox" id="FP" class="largerCheckbox"/><label for="FP" 
+                        class="checkLabel text-color">FP</label>
+                </td>      
+                <td class="text-color"><span>GST</span></td>                  
+            </tr>
+        </tbody>
+    </table>
+</div>

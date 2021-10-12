@@ -1,0 +1,151 @@
+<div class="row">
+    <div class="col-lg-3 borderAlign">
+        <div class="row highLowDiv">
+            <div class="col-lg-5" style="border: 2px solid black; background-color:#ababb3;">
+                <span> F2 (HIGH)</span>
+            </div>
+            <div class="col-lg-5" style="border: 2px solid black;background-color: #bedab1;margin-left: 3px;">
+                <span> F3 (LOW)</span>
+            </div>
+        </div>
+        <div class="row highLowDiv">
+            <div class="col-lg-12"></div>
+        </div>
+        <div class="row highLowDiv" *ngFor="let k of objectKeys(object)">            
+            <div class="col-lg-5" [style.background-color]="getBgColor(object[k])" style="border: 1px solid black;">
+                <span> {{object[k].cityCode}}</span>
+            </div>
+            <div class="col-lg-6" [style.background-color]="getBgColor(object[k])" style="margin-left: 3px;">
+                <input type="checkbox" /><span>{{object[k].pts}}</span> <input type="radio" /><span>
+                    {{object[k].number}}</span>
+            </div>
+        </div>
+        <div class="row highLowDiv">
+            <div class="col-lg-12"></div>
+        </div>
+        <div class="row highLowDiv">
+            <button class="col-lg-5 printBtn">F6 Print</button>
+            <button style="margin-left: 3px;" class="col-lg-5 resetBtn">F8 Reset</button>
+        </div>
+    </div>
+    <div class="col-lg-7" style="padding: 5px;">        
+        <table class="row" style="margin-left: -5px;margin-right: -5px;">
+            <tr>
+                <input type="checkbox" id="checkAll"/><label for="checkAll">All</label>
+                <td *ngFor="let i of items">                    
+                    <input type="text" style="border: 1px solid black;width: 80px;"/>
+                </td>
+            </tr>
+            <tr>
+                <td *ngFor="let colVal of utilityService.numSeriesArray.col0; let i = index;">
+                    <span *ngIf="colVal==-1" style="visibility: hidden;">0000 </span>
+                    <span *ngIf="colVal>-1">{{colVal}}</span>
+                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                </td>
+            </tr>
+            <tr>
+                <td *ngFor="let colVal of utilityService.numSeriesArray.col1; let i = index;">
+                    <span *ngIf="colVal==-1" style="visibility: hidden;"> 0000</span>
+                    <span *ngIf="colVal>-1">{{colVal}}</span>
+                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                </td>
+            </tr>
+            <tr>
+                <td *ngFor="let colVal of utilityService.numSeriesArray.col2; let i = index;">
+                    <span *ngIf="colVal==-1" style="visibility: hidden;"> 0000</span>
+                    <span *ngIf="colVal>-1">{{colVal}}</span>
+                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                </td>
+            </tr>
+            <tr>
+                <td *ngFor="let colVal of utilityService.numSeriesArray.col3; let i = index;">
+                    <span *ngIf="colVal==-1" style="visibility: hidden;"> 0000</span>
+                    <span *ngIf="colVal>-1">{{colVal}}</span>
+                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                </td>
+            </tr>
+            <tr>
+                <td *ngFor="let colVal of utilityService.numSeriesArray.col4; let i = index;">
+                    <span *ngIf="colVal==-1" style="visibility: hidden;">0000 </span>
+                    <span *ngIf="colVal>-1">{{colVal}}</span>
+                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                </td>
+            </tr>
+            <tr>
+                <td *ngFor="let colVal of utilityService.numSeriesArray.col5; let i = index;">
+                    <span *ngIf="colVal==-1" style="visibility: hidden;">0000 </span>
+                    <span *ngIf="colVal>-1">{{colVal}}</span>
+                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                </td>
+            </tr>
+            <tr>
+                <td *ngFor="let colVal of utilityService.numSeriesArray.col6; let i = index;">
+                    <span *ngIf="colVal==-1" style="visibility: hidden;"> 0000</span>
+                    <span *ngIf="colVal>-1">{{colVal}}</span>
+                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                </td>
+            </tr>
+            <tr>
+                <td *ngFor="let colVal of utilityService.numSeriesArray.col7; let i = index;">
+                    <span *ngIf="colVal==-1" style="visibility: hidden;">0000 </span>
+                    <span *ngIf="colVal>-1">{{colVal}}</span>
+                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                </td>
+            </tr>
+            <tr>
+                <td *ngFor="let colVal of utilityService.numSeriesArray.col8; let i = index;">
+                    <span *ngIf="colVal==-1" style="visibility: hidden;">0000 </span>
+                    <span *ngIf="colVal>-1">{{colVal}}</span>
+                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                </td>
+            </tr>
+            <tr>
+                <td *ngFor="let colVal of utilityService.numSeriesArray.col9; let i = index;">
+                    <span *ngIf="colVal==-1" style="visibility: hidden;"> 0000</span>
+                    <span *ngIf="colVal>-1">{{colVal}}</span>
+                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                </td>
+            </tr>            
+        </table>       
+        <div class="row highLowDiv" style="margin: 0;padding: 5px;">
+            <div class="col-lg-3" style="position: relative;left: -30px;">
+                <label>Transaction No/Bar Code</label>
+            </div>
+            <div class="col-lg-3">
+                <input type="text"/>
+            </div>
+            <div class="col-lg-3" style="position: relative;left: 38px;">
+                <button type="button" style="border: 1px solid black;width: 200px;background:none">Claim</button>                
+            </div>
+            <div class="col-lg-3" style="position: relative;left: 15px;">                
+                <button type="button" style="border: 1px solid black;width: 200px;background: none;">AdvanceDraw</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2">
+        <div class="row highLowDiv">
+            <div class="col-lg-5">
+                <span> Quantity</span>
+            </div>
+            <div class="col-lg-5">
+                <span> Points</span>
+            </div>
+        </div>
+        <div class="row highLowDiv" *ngFor="let k of objectKeys(object)">
+            <div class="col-lg-5">
+                <input type="text" style="width: 85px;background-color: #ea9249;"/>
+            </div>
+            <div class="col-lg-5">
+                <input type="text"  style="width: 85px;background-color: #bd2f57;"/>
+            </div>
+        </div>
+        <div class="row highLowDiv">
+            <div class="col-lg-5">
+                <input type="text" style="width: 85px;background:none;"/>
+            </div>
+            <div class="col-lg-5">
+                <input type="text"  style="width: 85px;background:none;"/>
+            </div>
+        </div>
+    </div>
+</div>

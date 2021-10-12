@@ -1,0 +1,52 @@
+button {
+    width: 130px;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid black;
+    border-bottom: 3px solid black;
+    border-top: 3px solid black;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+// tr,td {
+//     padding: 0;
+// }
+
+.left-align {
+    float: left;
+    text-align: left;
+}
+
+.right-align {
+    float: right;
+    text-align: right;
+}
+
+.red-text {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: ui-monospace;
+}
+
+.text {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: ui-monospace;
+}
+
+.pointBox {
+    font-size: 14px;
+    width: 130px;
+    font-weight: initial;    
+    position: relative;
+    top: -27px;    
+}
+
+.borders-box {
+    border: 2px solid black;
+    border-top: none;
+}
