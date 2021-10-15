@@ -10,8 +10,8 @@ import { UtilityService } from '../app.service';
 export class MainLotterySeriesPageComponent implements OnInit {
   
   isCheckAll = false;
-  colClicked = true;
-  rowClicked = false;
+  colClicked = false;
+  rowClicked = true;
   totalQuantity: number =0;
   totalPoints: number=0;
   selectedPoints: number=2;
@@ -20,7 +20,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
   object = { 
     "delhi" : 
       { 
-         "cityCode" : "30 - DELHI",
+         "cityCode" : "1000 - 1099",
          "pts" : "Pts 2*1",
          "number":"2",
          "classname":"delhiCity",
@@ -30,7 +30,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
       },
       "mumbai" : 
       { 
-         "cityCode" : "31 - MUMBAI",
+         "cityCode" : "1100 - 1199",
          "pts" : "Pts 2*1",
          "number":"3",
          "classname":"mumbaiCity",
@@ -40,7 +40,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
       },
       "surat" : 
       { 
-         "cityCode" : "32 - SURAT",
+         "cityCode" : "1200 - 1299",
          "pts" : "Pts 2*1",
          "number":"5",
          "classname":"suratCity",
@@ -50,7 +50,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
       },
       "panji" : 
       { 
-         "cityCode" : "33 - PANJI",
+         "cityCode" : "1300 - 1399",
          "pts" : "Pts 2*1",
          "number":"25",
          "classname":"panjiCity",
@@ -60,7 +60,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
       },
       "jaipur" : 
       { 
-         "cityCode" : "34 - JAIPUR",
+         "cityCode" : "1400 - 1499",
          "pts" : "Pts 2*1",
          "number":"50",
          "classname":"jaipurCity",
@@ -70,7 +70,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
       },
       "chenn" : 
       { 
-         "cityCode" : "35 - CHENN",
+         "cityCode" : "1500 - 1599",
          "pts" : "Pts 2*1",
          "number":"60",
          "classname":"chennCity",
@@ -80,7 +80,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
       },
       "ranchi" : 
       { 
-         "cityCode" : "36 - RANCHI",
+         "cityCode" : "1600 - 1699",
          "pts" : "Pts 2*1",
          "number":"70",
          "classname":"ranchiCity",
@@ -90,7 +90,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
       },
       "kokta" : 
       { 
-         "cityCode" : "37 -KOLKATA",
+         "cityCode" : "1700 - 1799",
          "pts" : "Pts 2*1",
          "number":"80",
          "classname":"koktaCity",
@@ -100,7 +100,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
       },
       "bhopa" : 
       { 
-         "cityCode" : "38 - BHOPA",
+         "cityCode" : "1800 - 1899",
          "pts" : "Pts 2*1",
          "number":"90",
          "classname":"bhopaCity",
@@ -110,7 +110,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
       },
       "indore" : 
       { 
-         "cityCode" : "38 - Indore",
+         "cityCode" : "1900 - 1999",
          "pts" : "Pts 2*1",
          "number":"100",
          "classname":"indoreCity",
@@ -132,6 +132,18 @@ items = [
 { colVal: '', rowVal: ''},
 { colVal: '', rowVal: ''},
 { colVal: '', rowVal: ''}];
+inputArray = [
+   { value: '' },
+{ value: '' },
+{ value: '' },
+{ value: '' },
+{ value: '' },
+{ value: '' },
+{ value: '' },
+{ value: '' },
+{ value: ''},
+{ value: ''}
+]
 value: number;
   seriesItems =[1,2,3,4,5,6,7,8,9,10,11];
   constructor(public utilityService: UtilityService) { }
@@ -182,9 +194,16 @@ value: number;
       }
    }
 
-   calculateQuantityAndPrice(event) {
-      let inVal = +event.target.value;
-      this.totalQuantity += inVal;
+   calculateQuantityAndPrice(event, i) {
+      let total = 0;
+      let inVal = event.target.value;
+      this.inputArray[i].value = inVal;
+      for(let j=0;j<this.inputArray.length;j++) {
+         if(this.inputArray[j].value !== "") {
+            total += +this.inputArray[j].value;
+         }
+      }      
+      this.totalQuantity = total;
       this.totalPoints = this.totalQuantity*this.selectedPoints;
       this.finalQuantity = this.totalQuantity;
       this.finalPoints = this.totalPoints;

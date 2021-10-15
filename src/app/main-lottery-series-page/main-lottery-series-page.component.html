@@ -45,80 +45,80 @@
                 <td><span class="visible-hidden">0000 </span><input type="text" class="table-input" (keyup)="onKey($event, 0, 'rowClicked')"/></td>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col0; let i = index;">
                     <span>{{colVal}}</span>
-                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event)"/>
-                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}"/>
+                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
+                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
                 </td>
             </tr>
             <tr>
                 <td><span class="visible-hidden">0000 </span><input type="text" class="table-input" (keyup)="onKey($event, 1, 'rowClicked')"/></td>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col1; let i = index;">
                     <span >{{colVal}}</span>
-                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event)"/>
-                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}"/>
+                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
+                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
                 </td>
             </tr>
             <tr>
                 <td><span class="visible-hidden">0000 </span><input type="text" class="table-input" (keyup)="onKey($event, 2, 'rowClicked')"/></td>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col2; let i = index;">
                     <span >{{colVal}}</span>
-                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event)"/>
-                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}"/>
+                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
+                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
                 </td>
             </tr>
             <tr>
                 <td><span class="visible-hidden">0000 </span><input type="text" class="table-input" (keyup)="onKey($event, 3, 'rowClicked')"/></td>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col3; let i = index;">
                     <span >{{colVal}}</span>
-                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event)"/>
-                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}"/>
+                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
+                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
                 </td>
             </tr>
             <tr>
                 <td><span class="visible-hidden">0000 </span><input type="text" class="table-input" (keyup)="onKey($event, 4, 'rowClicked')"/></td>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col4; let i = index;">
                     <span >{{colVal}}</span>
-                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event)"/>
-                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}"/>
+                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
+                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
                 </td>
             </tr>
             <tr>
                 <td><span class="visible-hidden">0000 </span><input type="text" class="table-input" (keyup)="onKey($event, 5, 'rowClicked')"/></td>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col5; let i = index;">
                     <span >{{colVal}}</span>
-                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event)"/>
-                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}"/>
+                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
+                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
                 </td>
             </tr>
             <tr>
                 <td><span class="visible-hidden">0000 </span><input type="text" class="table-input" (keyup)="onKey($event, 6, 'rowClicked')"/></td>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col6; let i = index;">
                     <span >{{colVal}}</span>
-                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event)"/>
-                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}"/>
+                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
+                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
                 </td>
             </tr>
             <tr>
                 <td><span class="visible-hidden">0000 </span><input type="text" class="table-input" (keyup)="onKey($event, 7, 'rowClicked')"/></td>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col7; let i = index;">
                     <span >{{colVal}}</span>
-                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event)"/>
-                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}"/>
+                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
+                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
                 </td>
             </tr>
             <tr>
                 <td><span class="visible-hidden">0000 </span><input type="text" class="table-input" (keyup)="onKey($event, 8, 'rowClicked')"/></td>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col8; let i = index;">
                     <span >{{colVal}}</span>
-                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event)"/>
-                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}"/>
+                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
+                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
                 </td>
             </tr>
             <tr>
                 <td><span class="visible-hidden">0000 </span><input type="text" class="table-input" (keyup)="onKey($event, 9, 'rowClicked')"/></td>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col9; let i = index;">
                     <span >{{colVal}}</span>
-                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event)"/>
-                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}"/>
+                    <input *ngIf="colClicked" type="text" class="table-input" value="{{items[i].colVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
+                    <input id="row{{i}}" *ngIf="rowClicked" type="text" class="table-input" value="{{items[i].rowVal}}" (keyup)="calculateQuantityAndPrice($event, i)"/>
                 </td>
             </tr>            
         </table>       
