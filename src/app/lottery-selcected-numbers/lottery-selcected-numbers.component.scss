@@ -1,7 +1,7 @@
 .box {
-    float: left;
+    // float: left;
     height: 90px;
-    width: 130px;    
+    // width: 130px;    
     // border: 1px solid black;
     // border-bottom: 3px solid black;
     // border-top: 3px solid black;
@@ -14,9 +14,7 @@
     margin: 30px;
   }
 .col-sm-1 {
-  // padding-right:0;
-  padding-left:0;
-  width:132px
+  padding: 0;
 }
 
 .row {
