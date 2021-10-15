@@ -10,8 +10,13 @@ import { UtilityService } from '../app.service';
 export class MainLotterySeriesPageComponent implements OnInit {
   
   isCheckAll = false;
-  colClicked = false;
-  rowClicked = true;
+  colClicked = true;
+  rowClicked = false;
+  totalQuantity: number =0;
+  totalPoints: number=0;
+  selectedPoints: number=2;
+  finalQuantity: number;
+  finalPoints: number;
   object = { 
     "delhi" : 
       { 
@@ -21,7 +26,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"delhiCity",
          "bgColor":"#226f87",
          "checked":true,
-         "selected":true
+         "ptsSelected":true
       },
       "mumbai" : 
       { 
@@ -31,7 +36,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"mumbaiCity",
          "bgColor":"#948195",
          "checked":false,
-         "selected":false
+         "ptsSelected":true
       },
       "surat" : 
       { 
@@ -41,7 +46,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"suratCity",
          "bgColor":"#d8e3e5",
          "checked":false,
-         "selected":false
+         "ptsSelected":true
       },
       "panji" : 
       { 
@@ -51,7 +56,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"panjiCity",
          "bgColor":"#c6c7ca",
          "checked":false,
-         "selected":false
+         "ptsSelected":true
       },
       "jaipur" : 
       { 
@@ -61,7 +66,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"jaipurCity",
          "bgColor":"#c3b3ab",
          "checked":false,
-         "selected":false
+         "ptsSelected":true
       },
       "chenn" : 
       { 
@@ -71,7 +76,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"chennCity",
          "bgColor":"#d3a697",
          "checked":false,
-         "selected":false
+         "ptsSelected":true
       },
       "ranchi" : 
       { 
@@ -81,7 +86,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"ranchiCity",
          "bgColor":"#c5c7ce",
          "checked":false,
-         "selected":false
+         "ptsSelected":true
       },
       "kokta" : 
       { 
@@ -91,7 +96,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"koktaCity",
          "bgColor":"#c1b58c",
          "checked":false,
-         "selected":false
+         "ptsSelected":true
       },
       "bhopa" : 
       { 
@@ -101,7 +106,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"bhopaCity",
          "bgColor":"#e1dad2",
          "checked":false,
-         "selected":false
+         "ptsSelected":true
       },
       "indore" : 
       { 
@@ -111,11 +116,11 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"indoreCity",
          "bgColor":"#c2c8cc",
          "checked":false,
-         "selected":false
+         "ptsSelected":true
       }
   }
   
-//   items = [1,2,3,4,5,6,7,8,9,10];
+
 items = [
 { colVal: '', rowVal: ''},
 { colVal: '', rowVal: ''},
@@ -133,6 +138,7 @@ value: number;
 
   ngOnInit(): void {
      this.utilityService.generateNumberSeries(0);     
+     this.checkedRadioBtn(this.object.delhi,0)
   }
 
   objectKeys(obj) {
@@ -156,25 +162,32 @@ value: number;
      }    
   }
 
-selectAllPoints() {
-   if(this.isCheckAll) {
-      for (const property in this.object) {
-      this.object[property].checked = true;
-    }
-   } else {
-      for (const property in this.object) {
-      this.object[property].checked = false;
-    }
+   selectAllPoints() {
+      if(this.isCheckAll) {
+         for (const property in this.object) {
+         this.object[property].checked = true;
+      }
+      } else {
+         for (const property in this.object) {
+         this.object[property].checked = false;
+      }
+      }
+      
    }
-   
-}
 
-checkedRadioBtn(obj, index) {
-   alert(obj.number);
-    for (const property in this.object) {
-      this.object[property].pts = "Pts "+obj.number;
-    }
-}
+   checkedRadioBtn(obj, index) {
+   this.selectedPoints = obj.number;
+      for (const property in this.object) {
+         this.object[property].pts = "Pts "+obj.number;
+      }
+   }
 
+   calculateQuantityAndPrice(event) {
+      let inVal = +event.target.value;
+      this.totalQuantity += inVal;
+      this.totalPoints = this.totalQuantity*this.selectedPoints;
+      this.finalQuantity = this.totalQuantity;
+      this.finalPoints = this.totalPoints;
+   }
 }
 
