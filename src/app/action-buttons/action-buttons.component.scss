@@ -1,10 +1,10 @@
 button {
-    width: 130px;
+    width: 175px;
     font-weight: bold;
     font-size: 15px;
-    border: 1px solid black;
-    border-bottom: 3px solid black;
-    border-top: 3px solid black;
+    // border: 1px solid black;
+    // border-bottom: 3px solid black;
+    // border-top: 3px solid black;
 }
 
 .row {
@@ -47,6 +47,13 @@ button {
 }
 
 .borders-box {
-    border: 2px solid black;
-    border-top: none;
+    // border: 2px solid black;
+    // border-top: none;
+}
+
+.divSize {
+  height:50px;
+}
+.short-div {
+  height:25px;
 }

@@ -20,8 +20,9 @@ export class UtilityService {
   constructor() { }  
 
   generateNumberSeries(selectedNum) {
-    let min=selectedNum; let max = min+99;
-  //  if(selectedNum === 0) {
+    let min=selectedNum; 
+    let max = min+99;
+  //   if(selectedNum === 0) {
   //     min = 0000;
   //     max = 0099;
   //  }
@@ -76,5 +77,11 @@ export class UtilityService {
           break;
       }
     }    
+  }
+
+  disableScrolling(){
+    var x=window.scrollX;
+    var y=window.scrollY;
+    window.onscroll=function(){window.scrollTo(x, y);};
   }
 }

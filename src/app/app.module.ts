@@ -8,6 +8,7 @@ import { ActionButtonsComponent } from './action-buttons/action-buttons.componen
 import { ActionCheckboxesComponent } from './action-checkboxes/action-checkboxes.component';
 import { MainLotterySeriesPageComponent } from './main-lottery-series-page/main-lottery-series-page.component';
 import { UtilityService } from './app.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UtilityService } from './app.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [UtilityService],
   bootstrap: [AppComponent]

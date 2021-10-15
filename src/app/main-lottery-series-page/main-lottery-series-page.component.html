@@ -1,4 +1,5 @@
 <div class="row">
+    <!-- first left div with city names, points checkboxes , radio buttons -->
     <div class="col-lg-3 borderAlign">
         <div class="row highLowDiv">
             <div class="col-lg-5" style="border: 2px solid black; background-color:#ababb3;">
@@ -28,40 +29,44 @@
             <button style="margin-left: 3px;" class="col-lg-5 resetBtn">F8 Reset</button>
         </div>
     </div>
+    <!-- first div ends -->
+
+    <!-- second middle div with number series and 10 input fields each row -->
     <div class="col-lg-7" style="padding: 5px;">        
         <table class="row" style="margin-left: -5px;margin-right: -5px;">
             <tr>
                 <input type="checkbox" id="checkAll"/><label for="checkAll">All</label>
-                <td *ngFor="let i of items">                    
-                    <input type="text" style="border: 1px solid black;width: 80px;"/>
+                <td *ngFor="let num of items;let i =index;">                    
+                    <input type="text" style="border: 1px solid black;width: 80px;" (change)="getInputValue(i)" 
+                    [(ngModel)]="num.value"/>                    
                 </td>
             </tr>
             <tr>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col0; let i = index;">
                     <span *ngIf="colVal==-1" style="visibility: hidden;">0000 </span>
                     <span *ngIf="colVal>-1">{{colVal}}</span>
-                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                    <input type="text" style="border: 1px solid black;width: 80px;"/>
                 </td>
             </tr>
             <tr>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col1; let i = index;">
                     <span *ngIf="colVal==-1" style="visibility: hidden;"> 0000</span>
                     <span *ngIf="colVal>-1">{{colVal}}</span>
-                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                    <input type="text" style="border: 1px solid black;width: 80px;" [(ngModel)]="items[i].value"/>
                 </td>
             </tr>
             <tr>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col2; let i = index;">
                     <span *ngIf="colVal==-1" style="visibility: hidden;"> 0000</span>
                     <span *ngIf="colVal>-1">{{colVal}}</span>
-                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                    <input type="text" style="border: 1px solid black;width: 80px;" [(ngModel)]="items[i].value"/>
                 </td>
             </tr>
             <tr>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col3; let i = index;">
                     <span *ngIf="colVal==-1" style="visibility: hidden;"> 0000</span>
                     <span *ngIf="colVal>-1">{{colVal}}</span>
-                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                    <input type="text" style="border: 1px solid black;width: 80px;" [(ngModel)]="items[i].value"/>
                 </td>
             </tr>
             <tr>
@@ -122,6 +127,9 @@
             </div>
         </div>
     </div>
+    <!-- second div ends -->
+
+    <!-- third right div with quantity and  points 10 input fields -->
     <div class="col-lg-2">
         <div class="row highLowDiv">
             <div class="col-lg-5">
@@ -148,4 +156,5 @@
             </div>
         </div>
     </div>
+    <!-- third div ends -->
 </div>

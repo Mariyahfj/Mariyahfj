@@ -1,45 +1,6 @@
-<!-- <div class="row">
-    <div class="col-sm-1" style="margin-right: 19px;">
-        <div class='boxFirst result-color'>
-            <div class="result-row"><span>S&nbsp;&nbsp;&nbsp;H</span></div>
-            <div class="result-row"><span>K&nbsp;&nbsp;&nbsp;O</span></div>
-            <div class="result-row"><span>I&nbsp;&nbsp;&nbsp;C</span></div> -->
-<!-- <div class="result-row"><span>L&nbsp;&nbsp;&nbsp;K</span></div>
-            <div class="result-row"><span>L&nbsp;&nbsp;&nbsp;E</span></div>
-            <div class="result-row"><span> &nbsp;&nbsp;&nbsp;Y</span></div> 
-            <div class="result-row"><span>GAME</span></div>
-        </div>
-    </div>  
-    <div class="row">
-        <div class="col-sm-1" *ngFor="let btn of btnsArray">
-            <button>{{btn}}</button>
-        </div>  
-        <div class="col-sm-2">
-            <p class="color-red">Last Tran No. &nbsp;&nbsp; Last Pts.</p>
-        </div>      
-    </div>    
-    <div class="row">
-        <div class="col-sm-1">
-            <p class="color-red">Time To Draw</p>            
-        </div>  
-        <div class="col-sm-1">
-            <p>00:11:33</p>           
-        </div>  
-        <div class="col-sm-1">
-            <p>Draw Time</p>
-        </div>  
-        <div class="col-sm-1">
-            <p>09:15 PM</p>
-        </div>  
-        <div class="col-sm-1">            
-            <p>14-Jun-2021</p>
-        </div>  
-    </div>
-</div> -->
-
 <div class="row">
-    <div class="col-sm-1" style="padding:0;">
-        <div class='boxFirst result-color'>
+    <div class="col-sm-2 boxFirst" style="padding:0;">
+        <div class='result-color'>
             <table>
                 <tbody>
                     <tr class="row" style="padding: 0;">
@@ -47,12 +8,14 @@
                             <span>S</span><br>
                             <span>K</span><br>
                             <span>I</span><br>
-                            <span>L</span><br>
-                            <span>L</span><br>
+                            <span>L</span>
+                            <!-- <span>L</span><br>
+                            <span>L</span><br> -->
                         </td>
                         <td class="col-sm-8">
+                            <!-- <span></span><br>
                             <span></span><br>
-                            <span></span><br>
+                            <span></span><br> -->
                             <span></span><br>
                             <span></span><br>
                             <span></span><br>
@@ -62,26 +25,30 @@
                             <span>H</span><br>
                             <span>O</span><br>
                             <span>C</span><br>
-                            <span>K</span><br>
+                            <span>K</span>
+                            <!-- <span>K</span><br>
                             <span>E</span><br>
-                            <span>Y</span><br>
+                            <span>Y</span><br> -->
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    <div class="col-sm-11">
+    <div class="col-sm-10" style="padding-left:0;padding-right:0;">
         <div class="row">
-            <div class="col-sm-1" style="width: 131px;padding-left: 6px;" *ngFor="let btn of btnsArray">
+            <div class="col-sm-1" style="width: 175px;padding-left: 0;border:2px solid black" *ngFor="let btn of btnsArray">
                 <button>{{btn}}</button>
             </div>
-            <div class="col-sm-2 color-red red-text" style="padding-left: 8px;">
-                <span>Last Tran No.</span><span class="padding-left-20">&nbsp;&nbsp;&nbsp; Last Pts.</span>
+            <div class="col-sm-1 color-red red-text" style="width: 145px;padding-left: 5px;">
+                <span>Last Tran No.</span>
             </div> 
+            <div class="col-sm-1 color-red red-text" style="width: 145px;padding-left: 0;">
+                <span>Last Pts.</span>
+            </div>
         </div>
-        <div class="row" style="padding: 5px;" >
-            <div class="col-sm-1 color-red red-text">
+        <div class="row">
+            <!-- <div class="col-sm-1 color-red red-text">
                 <span>TimeToDraw</span>
             </div>
             <div class="col-sm-1 text">
@@ -99,21 +66,28 @@
             <div class="col-sm-2 text">
                 <span>14-Jun-2021</span>
             </div>
-            <div class="col-sm-2 pointBox borders-box">
+            <div class="col-sm-2 ">
                 <span>Point Updates</span>
-            </div>                        
-        </div>
-        <div class="row">
-            <div class="col-sm-8"></div>
-            <div class="col-sm-2 pointBox borders-box color-red red-text">
-                <span>12345.32</span>
+            </div>                         -->
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 divSize color-red red-text">
+                <span class="color-red red-text">TimeToDraw</span>&nbsp;&nbsp;
+                <span>00:11:33</span>&nbsp;&nbsp;
+                <span class="color-red red-text">DrawTime</span>&nbsp;&nbsp;
+                <span>09:15 PM</span>&nbsp;&nbsp;
+                <span class="color-red red-text">Draw Date</span>&nbsp;&nbsp;<span>14-Jun-2021</span>
             </div>
-            <div class="col-sm-2 pointBox borders-box" style="border-left:none;">
-                <span>SHG56S7890</span>
-            </div> 
-            <div class="col-sm-2 pointBox borders-box" style="border-left:none;">
-                <span>10</span>
+            <div class="col-lg-1 col-md-1 col-sm-2 col-xs-1 divSize" style="padding:0px;text-align:center">
+                <div class="short-div divSize borders-box">Point Updates</div>
+                <div class="short-div divSize borders-box color-red red-text"><span>12345.32</span></div>
             </div>
-        </div>
+            <div class="col-lg-1 col-md-1 col-sm-2 col-xs-1 divSize" style="padding:0px;text-align:center">
+                <div class="short-div divSize"></div>
+                <div class="short-div divSize borders-box color-red red-text"><span>SHG56S7890</span></div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-sm-2 col-xs-1 divSize" style="padding:0px;text-align:center">
+                <div class="short-div divSize"></div>
+                <div class="short-div divSize borders-box color-red red-text"><span>10</span></div>
+            </div>
+        </div>        
     </div>    
 </div>

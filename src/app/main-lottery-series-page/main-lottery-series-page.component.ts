@@ -93,7 +93,9 @@ export class MainLotterySeriesPageComponent implements OnInit {
       }
   }
   
-  items = [1,2,3,4,5,6,7,8,9,10];
+//   items = [1,2,3,4,5,6,7,8,9,10];
+items = [{ value: ''},{ value: ''},{ value: ''},{ value: ''},{ value: ''},{ value: ''},{ value: ''},{ value: ''},{ value: ''},{ value: ''},{ value: ''}];
+value: number;
   seriesItems =[1,2,3,4,5,6,7,8,9,10,11];
   constructor(public utilityService: UtilityService) { }
 
@@ -107,6 +109,10 @@ export class MainLotterySeriesPageComponent implements OnInit {
 
   getBgColor(key) {
     return key.bgColor;
+  }
+
+  getInputValue(i) {
+      // alert(this.items[i].value)
   }
 
 }

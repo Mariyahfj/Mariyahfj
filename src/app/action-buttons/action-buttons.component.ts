@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActionButtonsComponent implements OnInit {
 
-  btnsArray = ['Reprint', 'Result', 'Cancel', 'Account', 'Password', 'Support', 'Player', 'Logout'];
+  btnsArray = ['Reprint', 'Result', 'Cancel', 'Account', 'Password', 'Logout'];
   constructor() { }
 
   ngOnInit(): void {

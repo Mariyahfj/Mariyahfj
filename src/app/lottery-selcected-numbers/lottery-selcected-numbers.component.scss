@@ -1,11 +1,10 @@
 .box {
     float: left;
-    height: 75px;
-    width: 130px;
-    margin-bottom: 15px;
-    border: 1px solid black;
-    border-bottom: 3px solid black;
-    border-top: 3px solid black;
+    height: 90px;
+    width: 130px;    
+    // border: 1px solid black;
+    // border-bottom: 3px solid black;
+    // border-top: 3px solid black;
     clear: both;
     font-size: 30px;
     font-weight: bold;
@@ -14,3 +13,13 @@
   .box>span {
     margin: 30px;
   }
+.col-sm-1 {
+  // padding-right:0;
+  padding-left:0;
+  width:132px
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}

@@ -6,12 +6,11 @@
 
 .boxFirst {
     float: left;
-    // height: 75px;
-    width: 150px;
-    margin-bottom: 15px;
-    border: 1px solid black;
-    border-bottom: 3px solid black;
-    border-top: 3px solid black;
+    // height: 90px;
+    width: 160px;    
+    // border: 1px solid black;
+    // border-bottom: 3px solid black;
+    // border-top: 3px solid black;
     clear: both;
 }
 .result-row {
@@ -25,7 +24,7 @@
 
 }
 .delhi-color{
-    background-color: #588870;
+    background-color: #588870;    
 }
 
 .mumbai-color{
@@ -120,4 +119,17 @@
 }
 .padding-right-5 {
     padding-right: 5px;    
+}
+
+
+// app component main containers css
+.main-container {
+    overflow: hidden;
+}
+
+.main {
+    margin-left: 0;
+    border-top:2px solid black;
+    border-bottom: 1px solid black;
+    border-left: 2px solid black;
 }
