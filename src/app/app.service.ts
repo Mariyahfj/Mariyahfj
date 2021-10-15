@@ -27,16 +27,16 @@ export class UtilityService {
   //     max = 0099;
   //  }
   this.numSeriesArray ={
-    col0 : [-1],
-    col1 : [-1],
-    col2 : [-1],
-    col3 : [-1],
-    col4 : [-1],
-    col5 : [-1],
-    col6 : [-1],
-    col7 : [-1],
-    col8 : [-1],
-    col9 : [-1],
+    col0 : [],
+    col1 : [],
+    col2 : [],
+    col3 : [],
+    col4 : [],
+    col5 : [],
+    col6 : [],
+    col7 : [],
+    col8 : [],
+    col9 : [],
   };
     let size: number = 0;
     for (let i = min; i <= max; i++) {

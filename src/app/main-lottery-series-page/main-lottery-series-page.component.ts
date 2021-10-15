@@ -10,6 +10,8 @@ import { UtilityService } from '../app.service';
 export class MainLotterySeriesPageComponent implements OnInit {
   
   isCheckAll = false;
+  colClicked = false;
+  rowClicked = true;
   object = { 
     "delhi" : 
       { 
@@ -94,7 +96,17 @@ export class MainLotterySeriesPageComponent implements OnInit {
   }
   
 //   items = [1,2,3,4,5,6,7,8,9,10];
-items = [{ value: ''},{ value: ''},{ value: ''},{ value: ''},{ value: ''},{ value: ''},{ value: ''},{ value: ''},{ value: ''},{ value: ''},{ value: ''}];
+items = [
+{ colVal: '', rowVal: ''},
+{ colVal: '', rowVal: ''},
+{ colVal: '', rowVal: ''},
+{ colVal: '', rowVal: ''},
+{ colVal: '', rowVal: ''},
+{ colVal: '', rowVal: ''},
+{ colVal: '', rowVal: ''},
+{ colVal: '', rowVal: ''},
+{ colVal: '', rowVal: ''},
+{ colVal: '', rowVal: ''}];
 value: number;
   seriesItems =[1,2,3,4,5,6,7,8,9,10,11];
   constructor(public utilityService: UtilityService) { }
@@ -111,9 +123,27 @@ value: number;
     return key.bgColor;
   }
 
-  getInputValue(i) {
-      // alert(this.items[i].value)
+  onKey(event: any, i: number, param) { 
+     if(param === 'colClicked') {
+        this.colClicked = true; this.rowClicked = false;
+        this.items[i].colVal = event.target.value;        
+     } else if(param === 'rowClicked') {
+        this.colClicked = false; this.rowClicked = true;
+        for(let k=0; k<this.items.length; k++) {
+           this.items[k].rowVal = event.target.value;
+        }
+        
+     }    
   }
+
+selectAllPoints() {
+   if(this.isCheckAll) {
+      for(var i=0; i<this.object.length; i++){  
+       if(this.object[i]=='checkbox')  
+         this.object[i].checked=true;  
+      }
+   }
+}
 
 }
 

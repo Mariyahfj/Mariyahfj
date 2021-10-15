@@ -1,11 +1,19 @@
 <div class="">
     <div class="col-sm-2 boxFirst" style="padding:0;">
         <div class="result-color">
-            <div class="result-row"><span>ID</span>&nbsp;&nbsp;&nbsp;<span style="float: right;padding-right: 10px;">HR5392</span></div>
+            <div class="result-row">
+                <span>ID</span>&nbsp;&nbsp;&nbsp;
+                <span style="float: right;padding-right: 10px;">HR5392</span>
+            </div>
             <div class="result-row" style="padding-top:5px"></div>
-            <div class="result-row" style="padding-top:5px"><span>Result</span>&nbsp;<span style="float: right;padding-right: 10px;">09:00 PM</span></div>
+            <div class="result-row" style="padding-top:5px">
+                <span>Result</span>&nbsp;
+                <span style="float: right;padding-right: 10px;">{{currentTime | date:'hh:mm a'}}</span>
+            </div>
             <div class="result-row" style="padding-top:10px"></div>
-            <div class="result-row color-red" style="font-size:20px;text-align:center"><span>14-Jun-2021</span></div>
+            <div class="result-row color-red" style="font-size:20px;text-align:center">
+                <span>{{currentDate |date:'dd-MMMM-yyyy' }}</span>
+            </div>
         </div>
     </div>
     <div *ngFor="let numbers of selectedCitiesNumArray">

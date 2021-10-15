@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LotterySelcectedNumbersComponent implements OnInit {
 
+  currentDate = new Date();
+  currentTime = new Date();
   selectedCitiesNumArray = [{
     delhi:[3009],
     mumbai:[3146],
