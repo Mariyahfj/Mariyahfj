@@ -37,78 +37,78 @@
             <tr>
                 <input type="checkbox" id="checkAll"/><label for="checkAll">All</label>
                 <td *ngFor="let num of items;let i =index;">                    
-                    <input type="text" style="border: 1px solid black;width: 80px;" (change)="getInputValue(i)" 
+                    <input type="text" class="table-input"  (change)="getInputValue(i)" 
                     [(ngModel)]="num.value"/>                    
                 </td>
             </tr>
             <tr>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col0; let i = index;">
-                    <span *ngIf="colVal==-1" style="visibility: hidden;">0000 </span>
+                    <span *ngIf="colVal==-1" class="visible-hidden">0000 </span>
                     <span *ngIf="colVal>-1">{{colVal}}</span>
-                    <input type="text" style="border: 1px solid black;width: 80px;"/>
+                    <input type="text" class="table-input" />
                 </td>
             </tr>
             <tr>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col1; let i = index;">
-                    <span *ngIf="colVal==-1" style="visibility: hidden;"> 0000</span>
+                    <span *ngIf="colVal==-1" class="visible-hidden"> 0000</span>
                     <span *ngIf="colVal>-1">{{colVal}}</span>
-                    <input type="text" style="border: 1px solid black;width: 80px;" [(ngModel)]="items[i].value"/>
+                    <input type="text" class="table-input"  [(ngModel)]="items[i].value"/>
                 </td>
             </tr>
             <tr>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col2; let i = index;">
-                    <span *ngIf="colVal==-1" style="visibility: hidden;"> 0000</span>
+                    <span *ngIf="colVal==-1" class="visible-hidden"> 0000</span>
                     <span *ngIf="colVal>-1">{{colVal}}</span>
-                    <input type="text" style="border: 1px solid black;width: 80px;" [(ngModel)]="items[i].value"/>
+                    <input type="text" class="table-input"  [(ngModel)]="items[i].value"/>
                 </td>
             </tr>
             <tr>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col3; let i = index;">
-                    <span *ngIf="colVal==-1" style="visibility: hidden;"> 0000</span>
+                    <span *ngIf="colVal==-1" class="visible-hidden"> 0000</span>
                     <span *ngIf="colVal>-1">{{colVal}}</span>
-                    <input type="text" style="border: 1px solid black;width: 80px;" [(ngModel)]="items[i].value"/>
+                    <input type="text" class="table-input"  [(ngModel)]="items[i].value"/>
                 </td>
             </tr>
             <tr>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col4; let i = index;">
-                    <span *ngIf="colVal==-1" style="visibility: hidden;">0000 </span>
+                    <span *ngIf="colVal==-1" class="visible-hidden">0000 </span>
                     <span *ngIf="colVal>-1">{{colVal}}</span>
-                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                    <input type="text" class="table-input"  />
                 </td>
             </tr>
             <tr>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col5; let i = index;">
-                    <span *ngIf="colVal==-1" style="visibility: hidden;">0000 </span>
+                    <span *ngIf="colVal==-1" class="visible-hidden">0000 </span>
                     <span *ngIf="colVal>-1">{{colVal}}</span>
-                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                    <input type="text" class="table-input"  />
                 </td>
             </tr>
             <tr>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col6; let i = index;">
-                    <span *ngIf="colVal==-1" style="visibility: hidden;"> 0000</span>
+                    <span *ngIf="colVal==-1" class="visible-hidden"> 0000</span>
                     <span *ngIf="colVal>-1">{{colVal}}</span>
-                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                    <input type="text" class="table-input"  />
                 </td>
             </tr>
             <tr>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col7; let i = index;">
-                    <span *ngIf="colVal==-1" style="visibility: hidden;">0000 </span>
+                    <span *ngIf="colVal==-1" class="visible-hidden">0000 </span>
                     <span *ngIf="colVal>-1">{{colVal}}</span>
-                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                    <input type="text" class="table-input"  />
                 </td>
             </tr>
             <tr>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col8; let i = index;">
-                    <span *ngIf="colVal==-1" style="visibility: hidden;">0000 </span>
+                    <span *ngIf="colVal==-1" class="visible-hidden">0000 </span>
                     <span *ngIf="colVal>-1">{{colVal}}</span>
-                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                    <input type="text" class="table-input"  />
                 </td>
             </tr>
             <tr>
                 <td *ngFor="let colVal of utilityService.numSeriesArray.col9; let i = index;">
-                    <span *ngIf="colVal==-1" style="visibility: hidden;"> 0000</span>
+                    <span *ngIf="colVal==-1" class="visible-hidden"> 0000</span>
                     <span *ngIf="colVal>-1">{{colVal}}</span>
-                    <input type="text" style="border: 1px solid black;width: 80px;" />
+                    <input type="text" class="table-input"  />
                 </td>
             </tr>            
         </table>       
@@ -120,10 +120,10 @@
                 <input type="text"/>
             </div>
             <div class="col-lg-3" style="position: relative;left: 38px;">
-                <button type="button" style="border: 1px solid black;width: 200px;background:none">Claim</button>                
+                <button type="button" class="btnCss">Claim</button>                
             </div>
             <div class="col-lg-3" style="position: relative;left: 15px;">                
-                <button type="button" style="border: 1px solid black;width: 200px;background: none;">AdvanceDraw</button>
+                <button type="button" class="btnCss">AdvanceDraw</button>
             </div>
         </div>
     </div>
@@ -149,10 +149,10 @@
         </div>
         <div class="row highLowDiv">
             <div class="col-lg-5">
-                <input type="text" style="width: 85px;background:none;"/>
+                <input type="text" class="inputCss"/>
             </div>
             <div class="col-lg-5">
-                <input type="text"  style="width: 85px;background:none;"/>
+                <input type="text"  class="inputCss" />
             </div>
         </div>
     </div>
