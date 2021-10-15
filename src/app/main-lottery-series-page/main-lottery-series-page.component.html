@@ -12,13 +12,13 @@
         <div class="row highLowDiv">
             <div class="col-lg-12"></div>
         </div>
-        <div class="row highLowDiv" *ngFor="let k of objectKeys(object)">            
+        <div class="row highLowDiv" *ngFor="let k of objectKeys(object);let i = index">            
             <div class="col-lg-5" [style.background-color]="getBgColor(object[k])" style="border: 1px solid black;">
                 <span> {{object[k].cityCode}}</span>
             </div>
             <div class="col-lg-6" [style.background-color]="getBgColor(object[k])" style="margin-left: 3px;">
-                <input type="checkbox" style="float: left;" /><span style="float: left;">{{object[k].pts}}</span> <input type="radio" /><span>
-                    {{object[k].number}}</span>
+                <input type="checkbox" style="float: left;" [(ngModel)]="object[k].checked" /><span style="float: left;">{{object[k].pts}}</span> 
+                <input type="radio" id="radio{{i}}" name="radioBtn" (change)="checkedRadioBtn(object[k],i)"/><span>{{object[k].number}}</span>
             </div>
         </div>
         <div class="row highLowDiv">

@@ -19,7 +19,9 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "pts" : "Pts 2*1",
          "number":"2",
          "classname":"delhiCity",
-         "bgColor":"#226f87"
+         "bgColor":"#226f87",
+         "checked":true,
+         "selected":true
       },
       "mumbai" : 
       { 
@@ -27,7 +29,9 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "pts" : "Pts 2*1",
          "number":"3",
          "classname":"mumbaiCity",
-         "bgColor":"#948195"
+         "bgColor":"#948195",
+         "checked":false,
+         "selected":false
       },
       "surat" : 
       { 
@@ -35,7 +39,9 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "pts" : "Pts 2*1",
          "number":"5",
          "classname":"suratCity",
-         "bgColor":"#d8e3e5"
+         "bgColor":"#d8e3e5",
+         "checked":false,
+         "selected":false
       },
       "panji" : 
       { 
@@ -43,7 +49,9 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "pts" : "Pts 2*1",
          "number":"25",
          "classname":"panjiCity",
-         "bgColor":"#c6c7ca"
+         "bgColor":"#c6c7ca",
+         "checked":false,
+         "selected":false
       },
       "jaipur" : 
       { 
@@ -51,7 +59,9 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "pts" : "Pts 2*1",
          "number":"50",
          "classname":"jaipurCity",
-         "bgColor":"#c3b3ab"
+         "bgColor":"#c3b3ab",
+         "checked":false,
+         "selected":false
       },
       "chenn" : 
       { 
@@ -59,7 +69,9 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "pts" : "Pts 2*1",
          "number":"60",
          "classname":"chennCity",
-         "bgColor":"#d3a697"
+         "bgColor":"#d3a697",
+         "checked":false,
+         "selected":false
       },
       "ranchi" : 
       { 
@@ -67,7 +79,9 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "pts" : "Pts 2*1",
          "number":"70",
          "classname":"ranchiCity",
-         "bgColor":"#c5c7ce"
+         "bgColor":"#c5c7ce",
+         "checked":false,
+         "selected":false
       },
       "kokta" : 
       { 
@@ -75,7 +89,9 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "pts" : "Pts 2*1",
          "number":"80",
          "classname":"koktaCity",
-         "bgColor":"#c1b58c"
+         "bgColor":"#c1b58c",
+         "checked":false,
+         "selected":false
       },
       "bhopa" : 
       { 
@@ -83,7 +99,9 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "pts" : "Pts 2*1",
          "number":"90",
          "classname":"bhopaCity",
-         "bgColor":"#e1dad2"
+         "bgColor":"#e1dad2",
+         "checked":false,
+         "selected":false
       },
       "indore" : 
       { 
@@ -91,7 +109,9 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "pts" : "Pts 2*1",
          "number":"100",
          "classname":"indoreCity",
-         "bgColor":"#c2c8cc"
+         "bgColor":"#c2c8cc",
+         "checked":false,
+         "selected":false
       }
   }
   
@@ -112,7 +132,7 @@ value: number;
   constructor(public utilityService: UtilityService) { }
 
   ngOnInit(): void {
-     this.utilityService.generateNumberSeries(0);
+     this.utilityService.generateNumberSeries(0);     
   }
 
   objectKeys(obj) {
@@ -138,11 +158,22 @@ value: number;
 
 selectAllPoints() {
    if(this.isCheckAll) {
-      for(var i=0; i<this.object.length; i++){  
-       if(this.object[i]=='checkbox')  
-         this.object[i].checked=true;  
-      }
+      for (const property in this.object) {
+      this.object[property].checked = true;
+    }
+   } else {
+      for (const property in this.object) {
+      this.object[property].checked = false;
+    }
    }
+   
+}
+
+checkedRadioBtn(obj, index) {
+   alert(obj.number);
+    for (const property in this.object) {
+      this.object[property].pts = "Pts "+obj.number;
+    }
 }
 
 }
