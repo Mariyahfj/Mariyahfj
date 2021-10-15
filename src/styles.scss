@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 .main-container {
-    margin-left: 20px;
+    margin-left: 5px;
 }
 
 .boxFirst {
@@ -124,7 +124,7 @@
 
 // app component main containers css
 .main-container {
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .main {
@@ -132,4 +132,8 @@
     border-top:2px solid black;
     border-bottom: 1px solid black;
     border-left: 2px solid black;
+}
+
+.row {
+    margin-right: inherit !important;
 }
