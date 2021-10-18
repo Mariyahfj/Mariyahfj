@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UtilityService } from '../app.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-main-lottery-series-page',
@@ -17,6 +18,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
   selectedPoints: number=2;
   finalQuantity: number;
   finalPoints: number;
+  selectedTickets = [{ticketNumbers:'', quantity:''}]
   object = { 
     "delhi" : 
       { 
@@ -36,7 +38,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"mumbaiCity",
          "bgColor":"#948195",
          "checked":false,
-         "ptsSelected":true
+         "ptsSelected":false
       },
       "surat" : 
       { 
@@ -46,7 +48,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"suratCity",
          "bgColor":"#d8e3e5",
          "checked":false,
-         "ptsSelected":true
+         "ptsSelected":false
       },
       "panji" : 
       { 
@@ -56,7 +58,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"panjiCity",
          "bgColor":"#c6c7ca",
          "checked":false,
-         "ptsSelected":true
+         "ptsSelected":false
       },
       "jaipur" : 
       { 
@@ -66,7 +68,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"jaipurCity",
          "bgColor":"#c3b3ab",
          "checked":false,
-         "ptsSelected":true
+         "ptsSelected":false
       },
       "chenn" : 
       { 
@@ -76,7 +78,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"chennCity",
          "bgColor":"#d3a697",
          "checked":false,
-         "ptsSelected":true
+         "ptsSelected":false
       },
       "ranchi" : 
       { 
@@ -86,7 +88,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"ranchiCity",
          "bgColor":"#c5c7ce",
          "checked":false,
-         "ptsSelected":true
+         "ptsSelected":false
       },
       "kokta" : 
       { 
@@ -96,7 +98,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"koktaCity",
          "bgColor":"#c1b58c",
          "checked":false,
-         "ptsSelected":true
+         "ptsSelected":false
       },
       "bhopa" : 
       { 
@@ -106,7 +108,7 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"bhopaCity",
          "bgColor":"#e1dad2",
          "checked":false,
-         "ptsSelected":true
+         "ptsSelected":false
       },
       "indore" : 
       { 
@@ -116,10 +118,9 @@ export class MainLotterySeriesPageComponent implements OnInit {
          "classname":"indoreCity",
          "bgColor":"#c2c8cc",
          "checked":false,
-         "ptsSelected":true
+         "ptsSelected":false
       }
-  }
-  
+  }  
 
 items = [
 { colVal: '', rowVal: ''},
@@ -133,7 +134,7 @@ items = [
 { colVal: '', rowVal: ''},
 { colVal: '', rowVal: ''}];
 inputArray = [
-   { value: '' },
+{ value: '' },
 { value: '' },
 { value: '' },
 { value: '' },
@@ -149,8 +150,11 @@ value: number;
   constructor(public utilityService: UtilityService) { }
 
   ngOnInit(): void {
-     this.utilityService.generateNumberSeries(0);     
-     this.checkedRadioBtn(this.object.delhi,0)
+     this.utilityService.generateNumberSeries(1000);
+     this.utilityService.generateNumberSeries(this.utilityService.minRowSeries, 'rowSeries');     
+     this.checkedRadioBtn(this.object.delhi,0);
+     this.utilityService.setObjectRowSeries();
+     this.object = this.utilityService.object;
   }
 
   objectKeys(obj) {
@@ -175,16 +179,16 @@ value: number;
   }
 
    selectAllPoints() {
-      if(this.isCheckAll) {
+      if (this.isCheckAll) {
          for (const property in this.object) {
-         this.object[property].checked = true;
-      }
+            this.object[property].ptsSelected = true;
+         }
       } else {
          for (const property in this.object) {
-         this.object[property].checked = false;
+            this.object[property].ptsSelected = false;
+         }
       }
-      }
-      
+
    }
 
    checkedRadioBtn(obj, index) {
@@ -194,10 +198,15 @@ value: number;
       }
    }
 
-   calculateQuantityAndPrice(event, i) {
+   calculateQuantityAndPrice(event, i, param?) {          
       let total = 0;
       let inVal = event.target.value;
-      this.inputArray[i].value = inVal;
+      if(param === 'allInput') {
+         inVal = +inVal*10;
+      }
+      this.utilityService.numSeriesArray[param][i].inputNum = inVal;
+      console.log(this.utilityService.numSeriesArray);
+      this.inputArray[i].value = inVal;      
       for(let j=0;j<this.inputArray.length;j++) {
          if(this.inputArray[j].value !== "") {
             total += +this.inputArray[j].value;
@@ -207,6 +216,10 @@ value: number;
       this.totalPoints = this.totalQuantity*this.selectedPoints;
       this.finalQuantity = this.totalQuantity;
       this.finalPoints = this.totalPoints;
+   }
+
+   genRowSeries(event){
+      alert(event.target.id);
    }
 }
 

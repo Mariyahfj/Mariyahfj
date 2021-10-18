@@ -1,9 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
-.main-container {
-    margin-left: 5px;
-}
-
+// .main-container {
+//     margin-left: 5px;
+// }
 .boxFirst {
     float: left;
     // height: 90px;
@@ -13,114 +12,128 @@
     // border-top: 3px solid black;
     clear: both;
 }
+
 .result-row {
     margin-right: 0px;
     margin-left: 5px;
     font-size: 15px;
     font-weight: bold;
 }
+
 .result-color {
     background-color: #cdbec1;
-
-}
-.delhi-color{
-    background-color: #588870;    
 }
 
-.mumbai-color{
+.delhi-color {
+    background-color: #588870;
+}
+
+.mumbai-color {
     background-color: #a082a4;
 }
 
-.surat-color{
+.surat-color {
     background-color: #d0e0e0;
 }
 
-.panji-color{
+.panji-color {
     background-color: #939aa2;
 }
 
-.jaipur-color{
+.jaipur-color {
     background-color: #92654e;
 }
 
-.chenn-color{
+.chenn-color {
     background-color: #b34337;
 }
 
-.ranchi-color{
+.ranchi-color {
     background-color: #9b8fa3;
 }
 
-.kolkta-color{
+.kolkta-color {
     background-color: #847a4c;
 }
 
-.bhopa-color{
+.bhopa-color {
     background-color: #dcb8a0;
 }
 
-.indore-color{
+.indore-color {
     background-color: #969b9f;
 }
 
 // .row {
 //     height: 75px;
 // }
-
 .color-red {
     color: rgb(211, 48, 48);
 }
 
 .padding-top-10 {
-    padding-top: 10px;    
+    padding-top: 10px;
 }
+
 .padding-top-15 {
-    padding-top: 10px;    
+    padding-top: 10px;
 }
+
 .padding-top-20 {
-    padding-top: 10px;    
+    padding-top: 10px;
 }
+
 .padding-top-25 {
-    padding-top: 10px;    
+    padding-top: 10px;
 }
 
 .padding-left-10 {
-    padding-left: 10px;    
-}
-.padding-left-15 {
-    padding-left: 15px;    
-}
-.padding-left-20 {
-    padding-left: 20px;    
-}
-.padding-left-5 {
-    padding-left: 5px;    
-}
-.padding-bottom-10 {
-    padding-bottom: 10px;    
-}
-.padding-bottom-15 {
-    padding-bottom: 15px;    
-}
-.padding-bottom-20 {
-    padding-bottom: 20px;    
-}
-.padding-bottom-5 {
-    padding-bottom: 5px;    
-}
-.padding-right-10 {
-    padding-right: 10px;    
-}
-.padding-right-15 {
-    padding-right: 15px;    
-}
-.padding-right-20 {
-    padding-right: 20px;    
-}
-.padding-right-5 {
-    padding-right: 5px;    
+    padding-left: 10px;
 }
 
+.padding-left-15 {
+    padding-left: 15px;
+}
+
+.padding-left-20 {
+    padding-left: 20px;
+}
+
+.padding-left-5 {
+    padding-left: 5px;
+}
+
+.padding-bottom-10 {
+    padding-bottom: 10px;
+}
+
+.padding-bottom-15 {
+    padding-bottom: 15px;
+}
+
+.padding-bottom-20 {
+    padding-bottom: 20px;
+}
+
+.padding-bottom-5 {
+    padding-bottom: 5px;
+}
+
+.padding-right-10 {
+    padding-right: 10px;
+}
+
+.padding-right-15 {
+    padding-right: 15px;
+}
+
+.padding-right-20 {
+    padding-right: 20px;
+}
+
+.padding-right-5 {
+    padding-right: 5px;
+}
 
 // app component main containers css
 .main-container {
@@ -129,7 +142,7 @@
 
 .main {
     margin-left: 0;
-    border-top:2px solid black;
+    border-top: 2px solid black;
     border-bottom: 1px solid black;
     border-left: 2px solid black;
 }
